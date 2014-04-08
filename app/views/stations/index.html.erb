@@ -1,23 +1,23 @@
-<div class="row-fluid">
-  <div class="span12">
+<div class="row">
+  <div class="col-md-12, text-center">
     <h1>Bus Stops</h1>
     <div class="row-fluid">
-      <div class="span4">
+      <div class="col-md-6">
         <h1>Stations</h1>
-        <ul>
+        <ul class="list-unstyled">
           <% @stations.each do |station| %>
             <li><a href="/stations/<%= station.id %>"><%= station.name.capitalize %></li>
           <% end %>
-        <ul>
+        <ul><br>
         <%= link_to "Add Station", new_station_path, :class => "btn btn-success btn-sm" %>
       </div>
-      <div class="span4">
+      <div class="col-md-6">
         <h1>Lines</h1>
-        <ul>
+        <ul class="list-unstyled">
           <% @lines.each do |line| %>
           <li><a href="/lines/<%= line.id %>"><%= line.color.capitalize %></a></li>
           <% end %>
-        <ul>
+        <ul><br>
         <%= link_to "Add Line", new_line_path, :class => "btn btn-success btn-sm" %>
       </div>
     </div>
