@@ -1,0 +1,10 @@
+<h1><%= @station.name.capitalize %> Station:</h1>
+<h3>Lines:</h3>
+<ul>
+<% @station.stops.each do |stop| %>
+  <li><a href=""><%= Line.find(stop.line_id).color.capitalize %></a></li>
+<% end %>
+</ul>
+
+<%= link_to "Go Back", root_path, :class => "btn btn-danger btn-sm" %>
+<%= link_to "Add Stop", new_station_stop_path(@station), :class => "btn btn-success btn-sm" %>

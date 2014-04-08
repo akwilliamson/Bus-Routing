@@ -1,0 +1,10 @@
+<h1>Lines</h1>
+
+<ul>
+<% @lines.each do |line| %>
+  <li><%= line.color.capitalize %></li>
+<% end %>
+<ul>
+
+<%= link_to "Add Station", new_station_path, :class => "btn btn-success" %>
+<%= link_to "Add Line", new_line_path, :class => "btn btn-success" %>

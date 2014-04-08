@@ -1,0 +1,33 @@
+<% if @stop.errors.any? %>
+  <h3>Error:</h3>
+  <ul>
+    <% @stop.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+<%= form_for @stop do |f| %>
+
+  <div class="form-group">
+  <%= f.collection_select :station_id, Station.all, :id, :name, :selected => @stop.station_id || @station.id %>
+  </div>
+
+  <div class="form-group">
+  <%= f.collection_select :line_id, Line.all, :id, :color %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :arrival %>
+    <%= f.text_field :arrival %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :departure %>
+    <%= f.text_field :departure %>
+  </div>
+
+  <%= f.submit(:class => "btn btn-success") %>
+<% end %>
+<br>

@@ -1,0 +1,25 @@
+<div class="row-fluid">
+  <div class="span12">
+    <h1>Bus Stops</h1>
+    <div class="row-fluid">
+      <div class="span4">
+        <h1>Stations</h1>
+        <ul>
+          <% @stations.each do |station| %>
+            <li><a href="/stations/<%= station.id %>"><%= station.name.capitalize %></li>
+          <% end %>
+        <ul>
+        <%= link_to "Add Station", new_station_path, :class => "btn btn-success btn-sm" %>
+      </div>
+      <div class="span4">
+        <h1>Lines</h1>
+        <ul>
+          <% @lines.each do |line| %>
+          <li><a href="/lines/<%= line.id %>"><%= line.color.capitalize %></a></li>
+          <% end %>
+        <ul>
+        <%= link_to "Add Line", new_line_path, :class => "btn btn-success btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>

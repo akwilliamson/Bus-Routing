@@ -1,0 +1,10 @@
+<h1>Stops:</h1>
+<ul>
+<% @stops.each do |stop| %>
+  <li><%= stop.id %></li>
+<% end %>
+</ul>
+
+<%= link_to "View All", root_path, :class => "btn btn-success btn-sm" %>
+<%= link_to "View Stations", stations_path, :class => "btn btn-success btn-sm" %>
+<%= link_to "View Lines", lines_path, :class => "btn btn-success btn-sm" %>
